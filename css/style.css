@@ -1,0 +1,365 @@
+/* Mobile-first base styles */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjust to navbar height */
+}
+
+/* Mobile-first: keep fonts and layout compact */
+body, .nav-item, h1, h2, h3, .card, .price-tag, .footer, .register-sign {
+    font-size: 1em;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "nav"
+        "hero"
+        "main"
+        "register"
+        "footer";
+    margin: 0;
+    background-color: rgb(24, 33, 52);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+
+
+.hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 0;
+    background: none;
+    overflow: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.55;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 700px;
+    padding: 48px 24px;
+    color: #fff;
+    text-align: left;
+}
+
+.register-btn {
+    background: linear-gradient(90deg, rgb(40, 75, 101), rgb(68, 152, 175));
+    color: #fff;
+    width: 120px;
+    height: 38px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1em;
+    box-shadow: 0 2px 8px rgba(40,75,101,0.15);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.register-btn:hover,
+.register-btn:focus {
+    background: linear-gradient(90deg, rgb(68, 152, 175), rgb(40, 75, 101));
+    color: #e0e0e0;
+    transform: translateY(-2px) scale(1.04);
+    outline: none;
+    box-shadow: 0 4px 16px rgba(68,152,175,0.18);
+    cursor: pointer;
+}
+
+.sign-btns :nth-child(1) {
+    text-decoration: none;
+}
+
+main {
+    grid-area: main;
+    color: white;
+    margin: 20px 10px;
+}
+
+/* Feature cards readability */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: rgb(26, 81, 81);
+    color: #fff;
+    padding: 32px 24px;
+    margin: 0;
+    min-height: 180px;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    text-align: left;
+    font-size: 1.1em;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.03);
+    background-color: rgb(32, 100, 100);
+}
+
+/* Pricing cards readability */
+.plan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.price-tag {
+    background: linear-gradient(90deg, rgb(19, 89, 66), rgb(40, 56, 101));
+    color: #fff;
+    padding: 32px 24px;
+    min-height: 220px;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    text-align: left;
+    font-size: 1.1em;
+    margin: 0;
+    transition: transform 0.2s;
+}
+
+.price-tag:hover {
+    transform: translateY(-4px) scale(1.03);
+    background: linear-gradient(90deg, rgb(32, 100, 100), rgb(40, 56, 101));
+}
+
+.price-tag ul {
+    padding-left: 18px;
+    margin-top: 12px;
+    font-size: 1em;
+}
+
+.price-tag h3 {
+    margin-bottom: 8px;
+    font-size: 1.3em;
+}
+
+.register-sign {
+    grid-area: register;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(26, 37, 61) 60%, rgb(68, 152, 175) 100%);
+    min-height: 160px;
+    padding: 32px 16px;
+    color: #eaf6ff;
+    border-top: 2px solid rgba(68,152,175,0.18);
+    box-shadow: 0 -2px 16px rgba(40,75,101,0.10);
+}
+
+.register-sign h3 {
+    font-size: 1.25em;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.sign-btns {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sign-btns .register-btn {
+    background: linear-gradient(90deg, rgb(40, 75, 101), rgb(68, 152, 175));
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1em;
+    box-shadow: 0 2px 8px rgba(40,75,101,0.10);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.sign-btns .register-btn:hover,
+.sign-btns .register-btn:focus {
+    background: linear-gradient(90deg, rgb(68, 152, 175), rgb(40, 75, 101));
+    color: #e0e0e0;
+    transform: translateY(-2px) scale(1.04);
+    outline: none;
+    box-shadow: 0 4px 16px rgba(68,152,175,0.18);
+}
+
+
+/* About Us Section UI enhancement */
+#about {
+    background: none;
+    color: #eaf6ff;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 40px 0;
+    margin: 0;
+    max-width: none;
+    text-align: left;
+    position: static;
+    overflow: visible;
+}
+
+#about p {
+    font-size: 1.15em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    padding: 0 24px;
+}
+
+
+/* Contact Us Section UI enhancement */
+#contact .connect {
+    background: none;
+    color: #eaf6ff;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 32px 0;
+    margin: 0;
+    max-width: none;
+    text-align: left;
+    position: static;
+    overflow: visible;
+}
+
+
+
+#contact p {
+    font-size: 1.12em;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    padding: 0 24px;
+}
+
+#contact .register-btn {
+    margin-top: 12px;
+    font-size: 1em;
+}
+
+
+/* Tablet styles */
+@media (min-width: 600px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .card {
+        width: 40vw;
+        max-width: 300px;
+        margin: 10px;
+    }
+    .plan {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .price-tag {
+        width: 40vw;
+        max-width: 300px;
+        margin: 10px;
+    }
+    main {
+        margin: 30px;
+    }
+}
+
+/* Mobile navbar: stack links vertically, full width, no button */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100vw;
+        background: rgb(5, 31, 54);
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+    nav ul li {
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+    .nav-item {
+        padding: 16px;
+        font-size: 1em;
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Desktop styles */
+@media (max-width: 900px) and (min-width: 600px) {
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0;
+    }
+    nav ul li {
+        margin: 0 6px;
+    }
+    nav ul li:first-child {
+        margin-right: auto;
+    }
+    nav ul li:nth-last-child(2),
+    nav ul li:last-child {
+        margin-left: 0;
+        margin-right: 0;
+        /* Keep them together at the end */
+    }
+    nav ul li:nth-last-child(2) {
+        margin-left: auto;
+    }
+}
+
+
+/* Responsive: adjust hero height and padding on mobile */
+@media (max-width: 700px) {
+    .hero-section {
+        min-height: 40vh;
+    }
+    .hero-content {
+        padding: 32px 10px;
+    }
+}

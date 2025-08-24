@@ -1,0 +1,63 @@
+/* Shared theme for forms */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(90deg, rgb(24,33,52) 60%, rgb(68,152,175) 100%);
+    color: #eaf6ff;
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+p {
+    color: #eaf6ff;
+    text-align: center;
+    margin-top: 18px;
+}
+
+a {
+    color: #44a0c7;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #68b8af;
+}
+
+/* Contact Info Section */
+.contact-info {
+    margin-top: 32px;
+    background: rgba(40,75,101,0.12);
+    border-radius: 12px;
+    padding: 18px;
+    color: #eaf6ff;
+    font-size: 1em;
+}
+
+.contact-info h2 {
+    font-size: 1.2em;
+    color: #44a0c7;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.contact-info address {
+    font-style: normal;
+    color: #eaf6ff;
+}
+
+/* Responsive styles */
+@media (max-width: 700px) {
+    form {
+        padding: 24px 10px;
+        max-width: 98vw;
+        border-radius: 12px;
+    }
+    .contact-info {
+        padding: 12px;
+        border-radius: 8px;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+}
