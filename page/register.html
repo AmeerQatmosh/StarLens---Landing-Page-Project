@@ -1,47 +1,65 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="../css/register.css" />
-    <link rel="stylesheet" href="../css/base.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StarLens - Register</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/register.css" />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>
-          <a class="nav-item" href="../index.html"
-            ><img
-              src="../images/starlens.png"
-              alt="StarLens Logo"
-              width="90px"
-            />
-          </a>
-        </li>
-        <li><a class="nav-item" href="../index.html">Home</a></li>
-        <li><a class="nav-item" href="../index.html#features">Features</a></li>
-        <li><a class="nav-item" href="../index.html#about">About</a></li>
-        <li><a class="nav-item" href="../index.html#contact">Contact</a></li>
-        <li><a class="nav-item" href="../index.html#pricing">Pricing</a></li>
-        <li><a class="nav-item" href="./signin.html">Sign In</a></li>
-        <li><a class="nav-item" href="./register.html">Get Started</a></li>
-      </ul>
-    </nav>
-    <section class="register-form">
+    <header class="header">
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a class="nav-item" href="../index.html">
+              <img
+                src="../images/starlens.png"
+                alt="StarLens Logo"
+                width="90"
+                height="auto"
+              />
+            </a>
+          </li>
+          <li><a class="nav-item" href="../index.html">Home</a></li>
+          <li><a class="nav-item" href="../index.html#features">Features</a></li>
+          <li><a class="nav-item" href="../index.html#about">About</a></li>
+          <li><a class="nav-item" href="../index.html#contact">Contact</a></li>
+          <li><a class="nav-item" href="../index.html#pricing">Pricing</a></li>
+          <li><a class="nav-item" href="./signin.html">Sign In</a></li>
+          <li><a class="nav-item" href="./register.html" aria-current="page">Get Started</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="register-form">
       <form>
         <h2>Register</h2>
-        <label for="fullname">Full Name</label> <br>
-        <input id="fullname" name="fullname" type="text" /> <br>
-        
-        <label for="email">Email Address </label> <br>
-        <input id="email" name="email" type="email" /> <br>
 
-        <label for="password">Password </label> <br>
-        <input id="password" name="password" type="password" /> <br>
-        
+        <label for="fullname">Full Name</label>
+        <input id="fullname" name="fullname" type="text" required />
+
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          required
+          minlength="8"
+        />
+
         <button class="register-button" type="submit">Create Account</button>
 
-        <p>Already have an account? <span> <a href="./signin.html">Login Now</a></span> </p>
+        <p>
+          Already have an account?
+          <a href="./signin.html">Login Now</a>
+        </p>
       </form>
-    </section>
+    </main>
+
     <footer class="footer">
       <p>StarLens 2025 All Rights Reserved.</p>
     </footer>

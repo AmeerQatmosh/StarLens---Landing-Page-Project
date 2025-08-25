@@ -13,34 +13,36 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li>
-          <a class="nav-item" href="#/features"
-            ><img
-              src="./images/starlens.png"
-              alt="StarLens Logo"
-              width="90px"
-            />
+    <header class="header">
+      <nav class="navbar">
+        <ul>
+          <li>
+          <a class="nav-item" href="#">
+            <img src="./images/starlens.png" alt="StarLens Logo" width="90" />
           </a>
-        </li>
-        <li><a class="nav-item" href="#">Home</a></li>
-        <li><a class="nav-item" href="#features">Features</a></li>
-        <li><a class="nav-item" href="#about"> About</a></li>
-        <li><a class="nav-item" href="#contact"> Contact</a></li>
-        <li><a class="nav-item" href="#pricing"> Pricing</a></li>
-        <li><a class="nav-item" href="/page/signin.html"> Sign In</a></li>
-        <li><a class="nav-item" href="/page/register.html"> Get Started</a></li>
-      </ul>
-    </nav>
+          </li>
+          <li><a class="nav-item" href="#">Home</a></li>
+          <li><a class="nav-item" href="#features">Features</a></li>
+          <li><a class="nav-item" href="#about"> About</a></li>
+          <li><a class="nav-item" href="#contact"> Contact</a></li>
+          <li><a class="nav-item" href="#pricing"> Pricing</a></li>
+          <li><a class="nav-item" href="./page/signin.html"> Sign In</a></li>
+          <li>
+            <a class="nav-item" href="./page/register.html"> Get Started</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <section class="hero-section">
       <section class="hero-content">
         <h1>Observe and Explore the sky with our Telescopes</h1>
-        <p>
-          Join us for a unique observing experience, observe Palents, The moon,
-          Stars, and Constellations, with proficinal telescopes and guides.
-        </p>
+        <figure>
+          <figcaption>
+            Join us for a unique observing experience, observe Palents, The moon,
+            Stars, and Constellations, with proficinal telescopes and guides.
+          </figcaption>
+        </figure>
         <section>
           <a href="./page/register.html">
             <button class="register-btn">Get Started</button>
@@ -49,46 +51,71 @@
       </section>
       <img
         class="hero-img"
-        src="/images/telescope.jpg"
-        alt="sky telescope observation"
+        src="./images/telescope2.jpg"
+        alt="a sky telescope observation"
       />
     </section>
 
-    <main>
+    <main class="main">
       <section id="features">
         <h2>Features</h2>
         <section class="container">
           <article class="card">
-            <h3>Professional Telescopes</h3>
-            <p>
-              High Quality Telescopes for observing stars, palents, and the
-              moon.
-            </p>
+            <figure>
+              <img
+                src="./images/high-quaility-telescope.png"
+                class="feature-img"
+                alt="A high quality telescope"
+                width="250px"
+                height="200px"
+              />
+              <h3>Professional Telescopes</h3>
+              <figcaption>
+                Observe distant galaxies and planets with our advanced and high-quality
+                telescopes.
+              </figcaption>
+            </figure>
           </article>
 
           <article class="card">
-            <h3>Guided Stargazing</h3>
-            <p>
-              Our expert guides help you to identify constellations and
-              interesting celestial objects.
-            </p>
+            <figure>
+              <img
+                src="./images/stargazing.jpg"
+                class="feature-img"
+                alt="A group of people stargazing"
+                width="250px"
+                height="200px"
+              />
+              <h3>Guided Stargazing</h3>
+              <figcaption>
+                Join group in stargazing sessions led by expert guides.
+              </figcaption>
+            </figure>
           </article>
 
           <article class="card">
-            <h3>Photo Opportunities</h3>
-            <p>
-              Capture your unique and memorable moments night sky moments with
-              provided tips for beginner astrophotography.
-            </p>
+            <figure>
+              <img
+                src="./images/sky-photo-capture.jpg"
+                class="feature-img"
+                alt="A person capturing photo of the night sky"
+                width="250px"
+                height="200px"
+              />
+              <h3>Photo Opportunities</h3>
+              <figcaption>
+                Learn astrophotography and capture stunning night sky images.
+              </figcaption>
+            </figure>
           </article>
         </section>
       </section>
 
       <section id="about">
         <h2>About Us</h2>
-        <section>
+        <section class="about">
           <p>
-            We offer stargazing immersive experiences for beginners and
+            We at StarLens, offers stargazing immersive experiences for beginners and
             astronomy enthusiasts. Our sessions are designed to make observing
             and exploring the night sky easy, fun, and educational. Perfect for
             solo visitors, families, or groups.
@@ -115,8 +142,8 @@
 
         <section class="plan">
           <section class="price-tag">
-            <h3><strong>Basic</strong></h3>
-            <p>Free</p>
+            <h3><strong>Basic/Free</strong></h3>
+            <p>$0.00</p>
             <ul>
               <li>Access to a star chart guide.</li>
               <li>Basic telescope introduction.</li>
@@ -129,9 +156,9 @@
 
           <section class="price-tag">
             <h3><strong>Monthly</strong></h3>
-            <p><span>&#36;</span>20</p>
+            <p>$19.99</p>
             <ul>
-              <li>One guided stargazing session per month.</li>
+              <li>Up to 2 sessions guided stargazing session per month.</li>
               <li>Access to high-quality telescopes.</li>
               <li>Astrophotography tips.</li>
               <li>Observation notes and star map.</li>
@@ -142,7 +169,7 @@
 
           <section class="price-tag">
             <h3><strong>Yearly</strong></h3>
-            <p><span>&#36;</span>240</p>
+            <p>$239.9</p>
             <ul>
               <li>Unlimited stargazing sessions.</li>
               <li>Premium telescope access.</li>

@@ -1,19 +1,35 @@
 /* Mobile-first base styles */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Adjust to navbar height */
+    scroll-padding-top: 80px;
 }
 
 /* Mobile-first: keep fonts and layout compact */
-body, .nav-item, h1, h2, h3, .card, .price-tag, .footer, .register-sign {
+body,
+.nav-item,
+h1,
+h2,
+h3,
+.card,
+.price-tag,
+.footer,
+.register-sign {
     font-size: 1em;
+}
+
+.hero-section {
+    min-height: 40vh;
+}
+
+.hero-content {
+    padding: 40px 10px;
 }
 
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
-        "nav"
+        "header"
         "hero"
         "main"
         "register"
@@ -23,18 +39,22 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1 {
-    font-size: 2em;
+header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
+h1,
 h2 {
-    color: #fff;
     font-size: 2em;
-    margin-bottom: 18px;
     letter-spacing: 1px;
 }
 
-
+section {
+    padding: 20px;
+}
 
 .hero-section {
     position: relative;
@@ -43,22 +63,25 @@ h2 {
     justify-content: center;
     align-items: center;
     min-height: 90vh;
+    /* keep this for desktop */
+    width: 100%;
     padding: 0;
-    background: none;
     overflow: hidden;
 }
+
 
 .hero-img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100%;
+    /* fills the entire .hero-section */
     object-fit: cover;
+    /* ensures it covers without distortion */
     z-index: 1;
     opacity: 0.55;
 }
-
 
 .hero-content {
     position: relative;
@@ -68,10 +91,12 @@ h2 {
     padding: 48px 24px;
     color: #fff;
     text-align: left;
+    /* you can change to center for small screens */
 }
 
+
 .register-btn {
-    background: linear-gradient(90deg, rgb(40, 75, 101), rgb(68, 152, 175));
+    background: linear-gradient(90deg, rgb(14, 42, 99), rgb(68, 152, 175));
     color: #fff;
     width: 120px;
     height: 38px;
@@ -79,17 +104,16 @@ h2 {
     border-radius: 12px;
     font-weight: 600;
     font-size: 1em;
-    box-shadow: 0 2px 8px rgba(40,75,101,0.15);
+    box-shadow: 0 2px 8px rgba(40, 75, 101, 0.15);
     transition: background 0.3s, transform 0.2s;
 }
 
 .register-btn:hover,
 .register-btn:focus {
     background: linear-gradient(90deg, rgb(68, 152, 175), rgb(40, 75, 101));
-    color: #e0e0e0;
     transform: translateY(-2px) scale(1.04);
-    outline: none;
-    box-shadow: 0 4px 16px rgba(68,152,175,0.18);
+    outline: 1px solid #fff;
+    box-shadow: 0 4px 16px rgba(68, 152, 175, 0.18);
     cursor: pointer;
 }
 
@@ -97,7 +121,7 @@ h2 {
     text-decoration: none;
 }
 
-main {
+.main {
     grid-area: main;
     color: white;
     margin: 20px 10px;
@@ -106,13 +130,14 @@ main {
 /* Feature cards readability */
 .container {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
     gap: 30px;
 }
 
 .card {
-    background-color: rgb(26, 81, 81);
+    background: linear-gradient(90deg, rgb(10, 57, 71), rgb(40, 56, 101));
     color: #fff;
     padding: 32px 24px;
     margin: 0;
@@ -120,21 +145,97 @@ main {
     width: 100%;
     max-width: 320px;
     border-radius: 20px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     text-align: left;
     font-size: 1.1em;
     transition: transform 0.2s;
+    overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-4px) scale(1.03);
-    background-color: rgb(32, 100, 100);
+    background: linear-gradient(90deg, rgb(40, 56, 101), rgb(10, 57, 71));
+}
+
+.feature-img {
+    width: 100%;
+    /* fill card width */
+    height: 180px;
+    /* consistent height for all cards */
+    object-fit: cover;
+    /* crop to fit without distortion */
+    border-radius: 12px;
+    /* match card rounded corners */
+    display: block;
+    /* remove inline spacing */
+}
+
+.about {
+    background: linear-gradient(90deg, rgb(10, 57, 71), rgb(40, 56, 101));
+    color: #eaf6ff;
+    border-radius: 12px;
+    box-shadow: none;
+    padding: 40px 20px;
+    margin: 2vw 10vw;
+    max-width: none;
+    text-align: left;
+    position: static;
+    overflow: visible;
+}
+
+.about p {
+    font-size: 1.15em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    padding: 0 24px;
+}
+
+.about:hover {
+    transform: translateY(-4px) scale(1.03);
+    background: linear-gradient(90deg, rgb(40, 56, 101), rgb(10, 57, 71));
+}
+
+/* Contact Us Section UI enhancement */
+#contact .connect {
+    background: linear-gradient(90deg, rgb(10, 57, 71), rgb(40, 56, 101));
+    color: #eaf6ff;
+    border-radius: 12px;
+    box-shadow: none;
+    padding: 40px 20px;
+    margin: 2vw 10vw;
+    max-width: none;
+    text-align: left;
+    position: static;
+    overflow: visible;
+}
+
+#contact .connect:hover {
+    transform: translateY(-4px) scale(1.03);
+    background: linear-gradient(90deg, rgb(40, 56, 101), rgb(10, 57, 71));
+}
+
+#contact p {
+    font-size: 1.12em;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    padding: 0 24px;
+}
+
+#contact .register-btn {
+    margin-top: 12px;
+    margin-left: 24px;
+    font-size: 1em;
+}
+
+#contact .register-btn:hover,
+#contact .register-btn:focus {
+    outline: 1px solid #fff;
 }
 
 /* Pricing cards readability */
 .plan {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
     gap: 30px;
 }
@@ -147,7 +248,7 @@ main {
     width: 100%;
     max-width: 320px;
     border-radius: 20px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     text-align: left;
     font-size: 1.1em;
     margin: 0;
@@ -180,8 +281,8 @@ main {
     min-height: 160px;
     padding: 32px 16px;
     color: #eaf6ff;
-    border-top: 2px solid rgba(68,152,175,0.18);
-    box-shadow: 0 -2px 16px rgba(40,75,101,0.10);
+    border-top: 2px solid rgba(68, 152, 175, 0.18);
+    box-shadow: 0 -2px 16px rgba(40, 75, 101, 0.10);
 }
 
 .register-sign h3 {
@@ -206,7 +307,7 @@ main {
     border-radius: 10px;
     font-weight: 600;
     font-size: 1em;
-    box-shadow: 0 2px 8px rgba(40,75,101,0.10);
+    box-shadow: 0 2px 8px rgba(40, 75, 101, 0.10);
     transition: background 0.3s, transform 0.2s;
 }
 
@@ -216,150 +317,214 @@ main {
     color: #e0e0e0;
     transform: translateY(-2px) scale(1.04);
     outline: none;
-    box-shadow: 0 4px 16px rgba(68,152,175,0.18);
+    box-shadow: 0 4px 16px rgba(68, 152, 175, 0.18);
+    outline: 1px solid #fff;
 }
 
+/* Mobile navbar: stack links vertically */
 
-/* About Us Section UI enhancement */
-#about {
-    background: none;
-    color: #eaf6ff;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 40px 0;
-    margin: 0;
-    max-width: none;
-    text-align: left;
-    position: static;
-    overflow: visible;
-}
+@media (max-width: 545px) and (min-width:300px) {
 
-#about p {
-    font-size: 1.15em;
-    line-height: 1.7;
-    margin-bottom: 12px;
-    padding: 0 24px;
-}
-
-
-/* Contact Us Section UI enhancement */
-#contact .connect {
-    background: none;
-    color: #eaf6ff;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 32px 0;
-    margin: 0;
-    max-width: none;
-    text-align: left;
-    position: static;
-    overflow: visible;
-}
-
-
-
-#contact p {
-    font-size: 1.12em;
-    line-height: 1.6;
-    margin-bottom: 18px;
-    padding: 0 24px;
-}
-
-#contact .register-btn {
-    margin-top: 12px;
-    font-size: 1em;
-}
-
-
-/* Tablet styles */
-@media (min-width: 600px) {
-    .container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    .card {
-        width: 40vw;
-        max-width: 300px;
-        margin: 10px;
-    }
-    .plan {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    .price-tag {
-        width: 40vw;
-        max-width: 300px;
-        margin: 10px;
-    }
-    main {
-        margin: 30px;
-    }
-}
-
-/* Mobile navbar: stack links vertically, full width, no button */
-@media (max-width: 600px) {
-    nav ul {
+    .navbar ul {
         flex-direction: column;
         align-items: stretch;
-        width: 100vw;
-        background: rgb(5, 31, 54);
-        position: static;
-        box-shadow: none;
+        width: 100%;
         padding: 0;
         margin: 0;
+        background: rgb(5, 31, 54);
+        box-shadow: none;
+        overflow: hidden;
+        /* prevent overflow */
     }
-    nav ul li {
+
+    .navbar ul li {
         width: 100%;
         margin: 0;
         text-align: left;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        display: block;
+        /* override any inline-block */
     }
-    nav ul li:last-child {
-        border-bottom: none;
+
+    /* Show only essential links */
+    .navbar ul li:first-child,       /* logo */
+    .navbar ul li:nth-child(2),     /* Home */
+    .navbar ul li:nth-last-child(2),/* Sign In */
+    .navbar ul li:last-child {      /* Get Started */
+        display: block;
     }
+
+    /* Link styling */
     .nav-item {
-        padding: 16px;
-        font-size: 1em;
         display: block;
         width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
     }
+
+    .hero-section {
+
+        overflow: hidden;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 1em;
+    }
+
+    .hero-content p {
+        font-size: 0.6em;
+    }
+
 }
 
-/* Desktop styles */
-@media (max-width: 900px) and (min-width: 600px) {
-    nav ul {
+@media (max-width: 599px) {
+    .navbar ul {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: flex-start;
         gap: 0;
     }
-    nav ul li {
+
+    .navbar ul li {
+        display: none;
         margin: 0 6px;
     }
-    nav ul li:first-child {
+
+    /* Show only essential links */
+    .navbar ul li:first-child,       /* logo */
+    .navbar ul li:nth-child(2),     /* Home */
+    .navbar ul li:nth-last-child(2),/* Sign In */
+    .navbar ul li:last-child {      /* Get Started */
+        display: block;
+    } */
+
+    .navbar ul li:first-child {
         margin-right: auto;
     }
-    nav ul li:nth-last-child(2),
-    nav ul li:last-child {
+
+    .navbar ul li:nth-last-child(2),
+    .navbar ul li:last-child {
         margin-left: 0;
         margin-right: 0;
-        /* Keep them together at the end */
     }
-    nav ul li:nth-last-child(2) {
+
+    .navbar ul li:nth-last-child(2) {
         margin-left: auto;
+    }
+
+
+    .nav-item {
+        padding: 16px;
+        font-size: 1em;
+        display: block;
+        width: 100%;
+    }
+
+    .hero-section {
+        min-height: 60vh;
+        max-width: 100;
+        padding: 20px;
+    }
+
+    .hero-content {
+        padding: 24px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
     }
 }
 
+/* ---------------- Tablet (600px – 899px) ---------------- */
+@media (min-width: 600px) and (max-width: 899px) {
 
-/* Responsive: adjust hero height and padding on mobile */
-@media (max-width: 700px) {
-    .hero-section {
-        min-height: 40vh;
+    .navbar ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0;
     }
+
+    .navbar ul li {
+        display: none;
+        margin: 0 6px;
+    }
+
+    .navbar ul li:first-child,
+    .navbar ul li:nth-child(2),
+    .navbar ul li:nth-child(5),
+    .navbar ul li:nth-child(7),
+    .navbar ul li:nth-child(8) {
+        display: inline-block;
+    }
+
+    .navbar ul li:first-child {
+        margin-right: auto;
+    }
+
+    .navbar ul li:nth-last-child(2),
+    .navbar ul li:last-child {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .navbar ul li:nth-last-child(2) {
+        margin-left: auto;
+    }
+
+    .hero-section {
+        min-height: 90vh;
+    }
+
     .hero-content {
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+        margin: 20px;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+        padding: 20px;
+    }
+
+    .container,
+    .plan {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card,
+    .price-tag {
+        width: 40vw;
+        max-width: 300px;
+        margin: 10px;
+    }
+
+    .main {
+        margin: 30px;
+    }
+}
+
+/* ---------------- Desktop (900px and up) ---------------- */
+@media (min-width: 900px) {
+    .main {
+        min-height: 90vh;
         padding: 32px 10px;
     }
+
+    /* Add desktop-only refinements here if needed */
 }
